@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#251f29">
+  <title>Tu sorpresa</title>
+  <link rel="stylesheet" href="sorpresa.css">
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <nav class="topbar">
+    <a class="back-link" href="index.html" aria-label="Volver al inicio">
+      <span>←</span> Inicio
+    </a>
+    <span class="nav-title">Nuestra historia</span>
+  </nav>
+
+  <main>
+    <section class="opening">
+      <div class="opening-copy">
+        <p class="kicker">Feliz cumpleaños</p>
+        <h1>Nuestra historia<br><em>se siente asi</em></h1>
+        <p>Pequeños momentos, grandes recuerdos y una cantidad enorme de amor.</p>
+        <button class="gift-button" id="giftButton" type="button">
+          <span>Celebrar</span>
+          <span aria-hidden="true">♥</span>
+        </button>
+      </div>
+      <div class="opening-photo">
+        <img src="foto-principal.png" alt="Foto principal de nosotros">
+        <div class="photo-label">
+          <span>Un recuerdo</span>
+          <strong>para siempre</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter">
+      <span class="quote-mark">“</span>
+      <p>
+        Contigo descubri que los dias comunes pueden convertirse en recuerdos
+        especiales, y que el amor esta en cada sonrisa compartida.
+      </p>
+      <span class="signature">Siempre tuyo ♥</span>
+    </section>
+
+    <section class="scratch-section">
+      <div class="scratch-heading">
+        <p class="kicker">Solo para ti</p>
+        <h2>Rasca y descubre</h2>
+      </div>
+      <div class="scratch-grid">
+        <div class="scratch-card">
+          <div class="scratch-message" aria-label="Mensaje secreto">
+            <span>Mi sorpresa 1</span>
+            <strong>El amor eres tú, hoy y siempre ♥</strong>
+            <small>Rasca para revelar</small>
+          </div>
+          <canvas class="scratchCanvas" aria-label="Capa para rascar"></canvas>
+        </div>
+        <div class="scratch-card">
+          <div class="scratch-message" aria-label="Mensaje secreto">
+            <span>Mi sorpresa 2</span>
+            <strong>Tu sonrisa ilumina todos mis días</strong>
+            <small>Rasca para revelar</small>
+          </div>
+          <canvas class="scratchCanvas" aria-label="Capa para rascar"></canvas>
+        </div>
+        <div class="scratch-card">
+          <div class="scratch-message" aria-label="Mensaje secreto">
+            <span>Mi sorpresa 3</span>
+            <strong>Contigo quiero vivir mil aventuras</strong>
+            <small>Rasca para revelar</small>
+          </div>
+          <canvas class="scratchCanvas" aria-label="Capa para rascar"></canvas>
+        </div>
+        <div class="scratch-card">
+          <div class="scratch-message" aria-label="Mensaje secreto">
+            <span>Mi sorpresa 4</span>
+            <strong>Eres mi persona favorita</strong>
+            <small>Rasca para revelar</small>
+          </div>
+          <canvas class="scratchCanvas" aria-label="Capa para rascar"></canvas>
+        </div>
+        <div class="scratch-card">
+          <div class="scratch-message" aria-label="Mensaje secreto">
+            <span>Mi sorpresa 5</span>
+            <strong>Gracias por hacerme feliz</strong>
+            <small>Rasca para revelar</small>
+          </div>
+          <canvas class="scratchCanvas" aria-label="Capa para rascar"></canvas>
+        </div>
+        <div class="scratch-card">
+          <div class="scratch-message" aria-label="Mensaje secreto">
+            <span>Mi sorpresa 6</span>
+            <strong>Te elegiría una y otra vez</strong>
+            <small>Rasca para revelar</small>
+          </div>
+          <canvas class="scratchCanvas" aria-label="Capa para rascar"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="love-heart-section">
+      <div class="beating-heart" id="beatingHeart" role="button" tabindex="0" aria-label="Toca el corazón">
+        <span>♥</span>
+      </div>
+      <p class="kicker">Toca mi corazón</p>
+      <h2 id="heartMessage">Hay una frase para ti</h2>
+    </section>
+
+    <section class="love-password">
+      <div class="password-copy">
+        <p class="kicker">Solo nosotros conocemos la respuesta</p>
+        <h2>La contraseña del amor</h2>
+      </div>
+      <form class="password-card" id="passwordForm">
+        <label for="loveAnswer">¿Donde nos Conocimos o nos vimos por primera vez?</label>
+        <input id="loveAnswer" type="text" autocomplete="off" placeholder="Tu respuesta..." required>
+        <button type="submit">Desbloquear sorpresa</button>
+        <p class="password-result" id="passwordResult"></p>
+      </form>
+      <div class="password-reveal" id="passwordReveal">
+        <span>♕</span>
+        <strong>Conseguiste desbloquearlo</strong>
+        <p>Nuestro primer encuentro fue el comienzo de mi historia favorita.</p>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="galeria">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">Momentos favoritos</p>
+          <h2>Nuestros recuerdos</h2>
+        </div>
+        <label class="add-button" for="photoInput">+ Agregar fotos</label>
+        <input id="photoInput" type="file" accept="image/*" multiple hidden>
+      </div>
+      <div class="gallery" id="gallery">
+        <figure class="gallery-item featured interactive" tabindex="0">
+          <img src="foto-principal.png" alt="Foto principal de nosotros">
+          <figcaption>
+            <span>01</span>
+            <strong>Este momento contigo</strong>
+          </figcaption>
+          <button class="memory-caption" type="button" aria-label="Ver historia de esta foto">
+            <strong>Este beso lo guardaria para siempre</strong>
+            <span>Porque estar cerca de ti hace que todo se sienta perfecto.</span>
+          </button>
+        </figure>
+        <figure class="gallery-item interactive" tabindex="0">
+          <img src="recuerdo-2.png" alt="Uno de nuestros momentos">
+          <figcaption>
+            <span>02</span>
+            <strong>Un abrazo sincero</strong>
+          </figcaption>
+          <button class="memory-caption" type="button" aria-label="Ver historia de esta foto">
+            <strong>Tu abrazo es mi lugar favorito</strong>
+            <span>Si pudiera elegir un momento otra vez, seria este contigo.</span>
+          </button>
+        </figure>
+        <figure class="gallery-item interactive" tabindex="0">
+          <img src="recuerdo-3.png" alt="Nuestro corazón compartido">
+          <figcaption>
+            <span>03</span>
+            <strong>Hecho con amor</strong>
+          </figcaption>
+          <button class="memory-caption" type="button" aria-label="Ver historia de esta foto">
+            <strong>Dos manos, un mismo corazón</strong>
+            <span>Mis mejores recuerdos siguen siendo los que vivimos juntos.</span>
+          </button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="music-section">
+      <div class="music-copy">
+        <p class="kicker">Banda sonora</p>
+        <h2>La musica que nos une</h2>
+        <p>Elige una cancion especial para volver a este momento.</p>
+        <label class="add-button dark" for="songInput">+ Agregar canciones</label>
+        <input id="songInput" type="file" accept="audio/*" multiple hidden>
+      </div>
+      <div class="player-card">
+        <div class="album-art">
+          <span>♥</span>
+        </div>
+        <div class="track-info">
+          <span class="track-label">Ahora suena</span>
+          <strong id="trackName">Jósean Log - Doma</strong>
+          <div class="player-row">
+            <button id="playButton" type="button" aria-label="Reproducir">▶</button>
+            <input id="progress" type="range" value="0" min="0" max="100" aria-label="Progreso">
+            <time id="duration">0:00</time>
+          </div>
+          <audio id="audio" preload="metadata">
+            <source src="Doma.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="playlist" id="playlist"></div>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <p class="kicker">Cada instante cuenta</p>
+      <h2>Razones para sonreir</h2>
+      <div class="timeline-grid">
+        <article>
+          <span>01</span>
+          <h3>Tu sonrisa</h3>
+          <p>La parte de mis dias que nunca quiero perder.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Nuestras risas</h3>
+          <p>Las conversaciones que se vuelven recuerdos.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Lo que viene</h3>
+          <p>Todos los nuevos momentos que todavia vamos a vivir.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="finale-heart">♥</div>
+      <p>Hoy es tu dia</p>
+      <h2>Te amo mucho</h2>
+      <button id="loveButton" type="button">Hoy celebramos a lo grande</button>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="sorpresa.js"></script>
+</body>
+</html>
